@@ -1,0 +1,95 @@
+$ git init
+Initialized empty Git repository in C:/Users/avvarga/Desktop/gittest/.git/
+
+$ echo index.html styles.css aboutMe.txt
+index.html styles.css aboutMe.txt
+
+$ ls
+
+$ touch index.html styles.css aboutMe.txt
+
+$ ls
+aboutMe.txt  index.html  styles.css
+
+$ vi aboutMe.txt
+
+$ git add .
+warning: LF will be replaced by CRLF in aboutMe.txt.
+The file will have its original line endings in your working directory.
+
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   aboutMe.txt
+        new file:   index.html
+        new file:   styles.css
+
+
+$ git commit -m "updated about me"
+[master (root-commit) 7d55aea] updated about me
+ 3 files changed, 1 insertion(+)
+ create mode 100644 aboutMe.txt
+ create mode 100644 index.html
+ create mode 100644 styles.css
+
+$ vi aboutMe.txt
+
+$ git add .
+warning: LF will be replaced by CRLF in aboutMe.txt.
+The file will have its original line endings in your working directory.
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   aboutMe.txt
+
+
+$ git commit -m "added favorite movie to aboutMe"
+[master bb96950] added favorite movie to aboutMe
+ 1 file changed, 1 insertion(+)
+
+$ git add .
+warning: LF will be replaced by CRLF in aboutMe.txt.
+The file will have its original line endings in your working directory.
+
+$ git stash
+Saved working directory and index state WIP on master: bb96950 added favorite movie to aboutMe
+
+$ git log
+commit bb9695039509a5a03e3cbfb624f56cb7489340e7 (HEAD -> master)
+Author: Alejandro <avvarga@amazon.com>
+Date:   Wed Mar 7 13:05:47 2018 -0600
+
+    added favorite movie to aboutMe
+
+commit 7d55aead63cb7d43489c4767700d0826e9140a23
+Author: Alejandro <avvarga@amazon.com>
+Date:   Wed Mar 7 13:02:41 2018 -0600
+
+    updated about me
+
+$ git revert HEAD
+hint: Waiting for your editor to close the file... vi
+      1 [sig] bash 10288! sigpacket::process: Suppressing signal 18 to win32 process (pid 11328)
+[master 8ccc67d] Revert "added favorite movie to aboutMe"
+ 1 file changed, 1 deletion(-)
+
+$ vi aboutMe.txt
+
+$ git add aboutMe.txt
+
+$ git commit -m "added favorite book to aboutMe"
+[master ea05ae1] added favorite book to aboutMe
+ 1 file changed, 1 insertion(+)
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+

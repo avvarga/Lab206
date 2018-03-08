@@ -1,0 +1,114 @@
+C:\Users\avvarga>cd Desktop
+
+C:\Users\avvarga\Desktop>md test
+
+C:\Users\avvarga\Desktop>cd test
+
+C:\Users\avvarga\Desktop\test>cpoy NULL indexhtml
+'cpoy' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop\test>cpoy NUL index.html
+'cpoy' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop\test>copy NUL index.html
+        1 file(s) copied.
+
+C:\Users\avvarga\Desktop\test>copy NUL comands.txt
+        1 file(s) copied.
+
+C:\Users\avvarga\Desktop\test>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is D8AA-A9AD
+
+ Directory of C:\Users\avvarga\Desktop\test
+
+03/06/2018  03:51 PM    <DIR>          .
+03/06/2018  03:51 PM    <DIR>          ..
+03/06/2018  03:51 PM                 0 comands.txt
+03/06/2018  03:51 PM                 0 index.html
+               2 File(s)              0 bytes
+               2 Dir(s)  66,982,162,432 bytes free
+
+C:\Users\avvarga\Desktop\test>copy NUL styles.css
+        1 file(s) copied.
+
+C:\Users\avvarga\Desktop\test>copy index.html index_2.html
+        1 file(s) copied.
+
+C:\Users\avvarga\Desktop\test>rm styles.css
+'rm' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop\test>del styles.css
+
+C:\Users\avvarga\Desktop\test>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is D8AA-A9AD
+
+ Directory of C:\Users\avvarga\Desktop\test
+
+03/06/2018  03:53 PM    <DIR>          .
+03/06/2018  03:53 PM    <DIR>          ..
+03/06/2018  03:51 PM                 0 comands.txt
+03/06/2018  03:51 PM                 0 index.html
+03/06/2018  03:51 PM                 0 index_2.html
+               3 File(s)              0 bytes
+               2 Dir(s)  66,982,051,840 bytes free
+
+C:\Users\avvarga\Desktop\test>cd Desktop
+The system cannot find the path specified.
+
+C:\Users\avvarga\Desktop\test>cd ..
+
+C:\Users\avvarga\Desktop>md destination
+
+C:\Users\avvarga\Desktop>mv test/index_2.html destination/index_2.html
+'mv' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop>move test/index_2.html destination/index_2.html
+The system cannot find the path specified.
+
+C:\Users\avvarga\Desktop>mv /test/index_2.html /destination/index_2.html
+'mv' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop>move /test/index_2.html /destination/index_2.html
+The system cannot find the path specified.
+
+C:\Users\avvarga\Desktop>move test\index_2.html destination\index_2.html
+        1 file(s) moved.
+
+C:\Users\avvarga\Desktop>dir test\
+ Volume in drive C is OSDisk
+ Volume Serial Number is D8AA-A9AD
+
+ Directory of C:\Users\avvarga\Desktop\test
+
+03/06/2018  03:56 PM    <DIR>          .
+03/06/2018  03:56 PM    <DIR>          ..
+03/06/2018  03:51 PM                 0 comands.txt
+03/06/2018  03:51 PM                 0 index.html
+               2 File(s)              0 bytes
+               2 Dir(s)  66,981,851,136 bytes free
+
+C:\Users\avvarga\Desktop>dir destination
+ Volume in drive C is OSDisk
+ Volume Serial Number is D8AA-A9AD
+
+ Directory of C:\Users\avvarga\Desktop\destination
+
+03/06/2018  03:56 PM    <DIR>          .
+03/06/2018  03:56 PM    <DIR>          ..
+03/06/2018  03:51 PM                 0 index_2.html
+               1 File(s)              0 bytes
+               2 Dir(s)  66,981,838,848 bytes free
+
+C:\Users\avvarga\Desktop>rm /s destination
+'rm' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\avvarga\Desktop>rd /s destination
+destination, Are you sure (Y/N)? y
