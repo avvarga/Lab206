@@ -1,0 +1,18 @@
+table{
+    border: 2px solid black;
+}
+th{
+    padding: 0px 10px;
+}
+form{
+    border-top: 2px, solid black;
+    width: 280px;
+}
+label{
+    display: block;
+    margin-bottom: 10px; 
+    text-align: right;
+}
+button{
+    text-align: right;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <style>
+        form{
+            width: 280px;
+        }
+        label{
+            display: inline-block;
+            margin-bottom: 10px; 
+        }
+        button{
+            margin-left: 200px;
+        }
+        #adduser{
+            display: inline-block;
+            width: 400px;
+        }
+        #user_list{
+            display: inline-block;
+            width: 400px;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+        .usercard{
+            text-align: center;
+            width: 400px;
+            border: 4px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+              crossorigin="anonymous"></script>
+    <script>
+        $(document).on("click", "button",function(){
+            $('#user_list').append("<div class='usercard'><h2>"+$("#first_name").val()+" "+$("#last_name").val()+"</h2><p>Click for description!</p><p class=hide>"+$("#description").val()+"</p></div>");
+        })
+        $(document).on("click",".usercard",function(){
+            $(this).children().hide();
+            $(this).children(".hide").show();
+        })
+    </script>
+</head>
+<body>
+    <div id="adduser">
+        <h2 id=add>Add User</h2>
+        <form action="process.php">
+                <label>First Name: <input type="text" id="first_name"></label>
+                <label>Last Name: <input type="text" id="last_name"></label>
+                <label>Description: <textarea type="text" id="description"></textarea></label>
+        </form>
+        <button>Add User:</button>
+    </div>
+    <div id="user_list">
+     
+    </div>
+</body>
+</html>
