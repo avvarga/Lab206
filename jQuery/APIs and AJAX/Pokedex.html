@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pokemon</title>
+   <script
+   src="https://code.jquery.com/jquery-3.3.1.js"
+   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+   crossorigin="anonymous"></script>
+   <script>
+       $(document).ready(function(){
+           for(var i=1;i<152;i++){
+               $(".pokemon_list").append('<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+i+'.png" class="pokemon" id='+i+'>');
+           }
+           $(".pokemon_list").on("click", ".pokemon" ,function(){
+               var pokemon_id=$(this).attr("id");
+               $.get("https://pokeapi.co/api/v2/pokemon/"+pokemon_id, function(res) {
+                   console.log(res);
+                   $('.pokedex .left img').hide();
+                   $('.pokedex .right').children().hide();
+                   $('.pokedex .left').append("<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+pokemon_id+".png'>");
+                   $('.pokedex .right').append("<h1>"+res.name.toUpperCase()+"</h1>");
+                   $('.pokedex .right').append("<h3> Types:</h3><ul></ul>");
+                   $('.pokedex .right ul').append("<li>"+res.types[0].type.name+"</li>");
+                   $('.pokedex .right').append("<h3> Height:</h3><h4>"+res.height+"</h4>");
+                   $('.pokedex .right').append("<h3>Weight:</h3><h4>"+res.weight+"</h4>");
+                   if(res.types[1].type.name!=undefined){
+                       $('.pokedex .right ul').append("<li>"+res.types[1].type.name+"</li>");
+                   }
+               }, "json");
+           });
+       })
+   </script>
+   <style>
+       .left, .right{
+           width: 300px;
+           display: inline-block;
+           height: 450px;
+           vertical-align: top;
+       }
+       .right h3,ul,h4,li{
+           margin-left: 50px;
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+       .right h1{
+           margin-top: 120px;
+           text-align: center;
+       }
+       .pokedex .left img{
+           margin:130px 50px;
+           width: 200px;
+       }
+       h1{
+           font-size: 24px;
+       }
+       .pokemon_list{
+           width: 1200px;
+           display: inline-block;
+           vertical-align: top;
+       }
+       .pokedex{
+           margin-top: 150px;
+           background-image: url("Pokedex.png");
+           background-size: 600px;
+           background-repeat: no-repeat;
+           display: inline-block;
+           width: 650px;
+           height: 600px;
+           position: fixed;
+       }
+
+   </style>
+</head>
+<body>
+   <div class="wrapper">
+       <div class="pokemon_list">
+       </div>
+       <div class="pokedex">
+           <div class="left">
+
+           </div>
+           <div class="right">
+
+           </div>
+       </div>
+   </div>
+</body>
+</html>
