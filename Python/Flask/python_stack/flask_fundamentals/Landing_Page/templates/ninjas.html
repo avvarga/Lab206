@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninjas</title>
+</head>
+<body>
+    <h1>Ninjas!</h1>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius diam sodales risus vehicula ornare. Cras aliquam eget nisl eu malesuada. Quisque rutrum, diam in pretium volutpat, sapien magna mollis dui, sollicitudin ornare ipsum est at felis. Praesent consequat dui lacus, in convallis nisl consequat ac. Etiam justo massa, fermentum vitae ultrices nec, interdum vitae nisi. Phasellus vestibulum sapien mauris, et posuere ligula imperdiet et. Nam luctus eu quam quis efficitur. Suspendisse auctor arcu in hendrerit pretium. Aliquam id pretium ex, ac egestas enim. Curabitur eu convallis orci. Cras sapien libero, congue vel luctus non, volutpat sit amet nunc. Cras facilisis in libero et congue. Aliquam erat volutpat. </p>
+    <p> Quisque et auctor tellus, eget vehicula risus. Phasellus mauris ex, tincidunt hendrerit blandit non, auctor sollicitudin augue. Duis auctor nibh non placerat fermentum. Maecenas eget rhoncus ex, vitae vehicula nisi. Aenean commodo sem metus, vitae mollis erat venenatis ut. Duis in ante vitae erat varius sagittis. Quisque porttitor leo aliquet, auctor ipsum non, volutpat lorem. Pellentesque in volutpat nibh, in molestie ligula. Pellentesque viverra auctor augue, eu varius libero gravida pulvinar. Sed vel eleifend odio. Etiam vitae semper diam. In ullamcorper mi eu fringilla dapibus. Morbi consequat magna eu lacus luctus, id malesuada lacus efficitur. Suspendisse lobortis justo lacus, vitae porta dolor porttitor ut. Nam in tellus ligula. Fusce tempus augue vel tortor luctus malesuada. from flask import Flask, render_template 
+
+app = Flask(__name__)                     
+                                       
+@app.route('/')
+def greeting():                                  
+    return render_template ('index.html')  
+
+@app.route('/ninjas')
+def ninjas():
+    return render_template ('ninjas.html') 
+
+@app.route('/dojos/new')
+def about():
+    return render_template ('dojos.html')   
+app.run(debug=True)   </p>
+</body>
+</html>

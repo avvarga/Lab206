@@ -1,0 +1,8 @@
+#wrapper{
+    width: 500px;
+    border: 2px solid black;
+    padding: 20px;
+}
+.class,#location,#language,textarea,p{
+    display: block;
+}
