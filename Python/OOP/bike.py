@@ -11,12 +11,12 @@ class Bike(object):
         self.miles +=10
         return self
     def reverse(self):
-        print "Reversing"
-        self.miles -=5
         if self.miles>0:
-            return self
+            print "Reversing"
+            self.miles -=5
         else:
             print "Cannot go backwards!"
+        return self
 
 
 
