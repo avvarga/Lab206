@@ -1,0 +1,21 @@
+#wrapper{
+    width: 900px;
+}
+#register, #login{
+    width: 350px;
+    display: inline-block;
+    border: 2px solid black;
+    margin: 10px;
+    vertical-align: middle;
+    padding: 10px;
+}
+#login{
+    width: 250px;
+}
+label{
+    display: block;
+    margin: 10px;
+}
+input{
+    float: right;
+}
