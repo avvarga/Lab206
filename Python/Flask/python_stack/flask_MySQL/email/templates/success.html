@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Valid Email</title>
+</head>
+<body>
+    <div id="correct">
+        <h4>The email address you entered ({{ email }})</h4>
+        <h4>is a VALID email address! Thank you!</h4>
+    </div>
+    <h3>Email Addresses Entered:</h3>
+    <table>
+        <tbody>
+            {% for email in emailvalidation %}
+                <tr>
+                    <td>{{ email.email}}</td>
+                    <td>{{ email.created_at.strftime( '%m/%d/%y' ) }}</td>
+                    <td>{{ email.created_at.strftime( '%I:%M %p' ) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

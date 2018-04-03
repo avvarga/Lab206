@@ -1,0 +1,24 @@
+SELECT * 
+FROM users;
+
+
+SELECT * 
+FROM faves;
+
+
+SELECT *  
+FROM follows;
+
+
+SELECT *
+FROM tweets;
+
+
+SELECT first_name, last_name
+FROM users;
+SELECT *
+FROM users
+WHERE id <= 3;
+SELECT last_name
+FROM users
+WHERE id = 2 OR id = 3;

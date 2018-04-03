@@ -1,0 +1,13 @@
+#error{
+    background-color: red;
+    color: white;
+    width: 200px;
+    text-align: center;
+    margin: 20px;
+}
+#correct{
+    background-color: green;
+    width: 400px;
+    text-align: center;
+    border: 1px solid black;
+}

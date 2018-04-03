@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #wrapper{
+            width: 400px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        h2{
+            text-align: center;
+        }
+        label{
+            display: block;
+            margin: 10px;
+            text-align: right;
+        }
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Registration Form</h2>
+        <form action="/register" method="post">
+            <label>Email: <input type="text" name="email"></label>
+            <label>First Name: <input type="text" name="first_name"></label>
+            <label>Last Name: <input type="text" name="last_name"></label>
+            <label>Password: <input type="password" name="password"></label>
+            <label>Confirm Pass: <input type="password" name="confirmation"></label>
+            <input type="submit" value="Register">
+        </form>
+        <div id="messages">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

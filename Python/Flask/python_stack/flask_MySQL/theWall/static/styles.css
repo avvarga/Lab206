@@ -1,0 +1,50 @@
+#wrapper{
+    width: 900px;
+}
+#register, #login{
+    width: 350px;
+    display: inline-block;
+    border: 2px solid black;
+    margin: 10px;
+    vertical-align: middle;
+    padding: 10px;
+}
+#login{
+    width: 250px;
+}
+label{
+    display: inline-block;
+    margin: 10px;
+}
+input{
+    display: inline-block;
+    text-align: right;
+    float: right;
+}
+ul{
+    margin-left: 100px;
+}
+#header{
+    text-align: right;
+    padding: 3px;
+    background-color: forestgreen;
+}
+#top{
+    padding: 10px 10px 30px 10px;
+}
+textarea{
+    margin: 5px;
+    display: inline-block;
+}
+#comm{
+    border: 1px solid black;
+    padding: 30px;
+    margin: 50px;
+}
+#comment{
+    margin-left: 400px;
+}
+#comment_section{
+    text-align: right;
+    margin-right: 30px;
+}

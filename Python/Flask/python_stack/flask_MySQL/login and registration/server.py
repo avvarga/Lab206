@@ -51,6 +51,9 @@ def register():
         }
         if mysql.query_db(query,data) == []:
             mysql.query_db("INSERT INTO logins (first_name, last_name, email, password, created_at, updated_at) VALUES (:first_name, :last_name, :email, :password, NOW(), NOW())",data)
+            query2 = "SELECT * FROM logins WHERE logins.email= :email"
+            user = mysql.query_db (query2,data)
+            session ['user'] = user[0]
             return render_template('success.html')
     else:
         flash('This email is already registered')
@@ -63,5 +66,10 @@ def login():
     user_query = "SELECT * FROM logins where logins.email = :email AND logins.password = :password"
     query_data = { 'email': email, 'password': password}
     user = mysql.query_db(user_query, query_data)
-    return render_template('success.html')
+    if user != []:
+        session['user'] = user[0]
+        return render_template('success.html')
+    else:
+        flash ('Incorrect user information')
+        return redirect ('/')
 app.run(debug=True)

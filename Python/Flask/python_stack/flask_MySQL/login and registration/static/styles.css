@@ -19,3 +19,6 @@ label{
 input{
     float: right;
 }
+ul{
+    margin-left: 100px;
+}

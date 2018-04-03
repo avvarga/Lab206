@@ -1,0 +1,7 @@
+OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)") (Background on this error at: http://sqlalche.me/e/e3q8)
+
+FIX: make sure the port is correct
+
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)") (Background on this error at: http://sqlalche.me
+
+FIX: make sure the password is correct
