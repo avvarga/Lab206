@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+
+    </style>
+    <title>Users Index</title>
+</head>
+<body>
+    <h1>Friends:</h1>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>Friend Since</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for friend in full_friends: %}
+                <tr>
+                    <td>{{ friend.id }}</td>
+                    <td><a href="/users/{{ friend.id }}">{{ friend.name }}</a></td>
+                    <td>{{ friend.email }}</td>
+                    <td>{{ friend.created_at.strftime("%b %d, %Y") }}</td>
+                    <td> <a href="/users/{{ friend.id }}">Show</a>  <a href="/users/{{ friend.id }}/edit">Edit</a>  <a href="/users/{{ friend.id }}/destroy">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="end_link" href="/users/new">Add a new user</a>
+</body>
+</html>

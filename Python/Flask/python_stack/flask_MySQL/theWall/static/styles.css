@@ -18,7 +18,6 @@ label{
 }
 input{
     display: inline-block;
-    text-align: right;
     float: right;
 }
 ul{

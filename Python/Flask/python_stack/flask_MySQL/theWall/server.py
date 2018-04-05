@@ -68,7 +68,7 @@ def login():
     user = mysql.query_db(user_query, query_data)
     if user != []:
         session['user'] = user[0]
-        return render_template('wall.html')
+        return redirect('/wall')
     else:
         flash ('Incorrect user information')
         return redirect ('/')
@@ -110,6 +110,10 @@ def wall():
     session['comments']=mysql.query_db("SELECT * FROM comments JOIN users ON users.id = comments.user_id JOIN messages ON messages.id = comments.message_id ORDER BY comments.created_at DESC")
     return render_template ('wall.html')
 
-
+@app.route('/delete_message', methods=['POST'])
+def delete_message():
+   mysql.query_db("DELETE FROM comments WHERE message_id="+request.form['message_id'])
+   mysql.query_db("DELETE FROM messages WHERE id="+request.form['message_id'])
+   return redirect('/wall')
 
 app.run(debug=True)

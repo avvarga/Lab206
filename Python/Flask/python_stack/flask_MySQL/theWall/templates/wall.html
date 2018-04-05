@@ -34,7 +34,13 @@
                 <input type="hidden" name="message_id" value="{{ message.messages_id }}">
                 <textarea name="comment" id="comment" cols="125" rows="3"></textarea>
                 <input id="post" type="submit" value="Post a comment">
-            </form>    
+            </form>
+            {% if message.user_id == session['user'].id %}
+            <form action="/delete_message" method='post'>
+                <input type="hidden" value="{{message.messages_id}}" name="message_id">
+                <input type="submit" value="Delete message">
+            </form>
+            {% endif %}    
         </div>
     {%endfor%}
 </body>
