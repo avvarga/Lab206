@@ -22,7 +22,8 @@ function SLL(){ //class definition of SLL
             this.head = node;
             node.next = temp;
         }
-	}
+    }
+    
 	this.removeFront = function(){
 		// determine if the list is empty or not
 		if (this.head) { // if not empty
@@ -31,7 +32,8 @@ function SLL(){ //class definition of SLL
 			return temp.value; // return the temp's VALUE, not the entire node itself
 		}
 		return null; // if the list is empty, return null instead.
-	}
+    }
+    
     this.contains = function(val){
         var temp = this.head;
         while (temp != null){
@@ -42,6 +44,7 @@ function SLL(){ //class definition of SLL
         }
         return false;
     }
+
     this.length=function(){
         var pointer=this.head;
         var length=0;
@@ -51,6 +54,7 @@ function SLL(){ //class definition of SLL
         }
         return length;
     }
+
     this.min=function(){
         if(this.head){
             var pointer=this.head.next;
@@ -67,6 +71,7 @@ function SLL(){ //class definition of SLL
             return undefined;
         }
     }
+
     this.max=function(){
         var pointer=this.head;
         var max=this.head.value;
@@ -78,13 +83,89 @@ function SLL(){ //class definition of SLL
         }
         return max;
     }
+
+    this.removeBack = function (){
+        var temp = this.head;
+        while (temp){
+            if (!temp.next.next){
+                var value = temp.next.value
+                temp.next=null;
+                break;
+            }
+            temp = temp.next;
+        }
+        return value;
+    }
+
+    this.addBack = function (val){
+        var newNode = new Node (val);
+        var temp = this.head;
+        while (temp.next){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return this;
+    }
+
+    this.removeVal = function (val){
+        var temp = this.head;
+        if (temp.value === val){
+            this.head = temp.next;
+            return this;
+        }
+        while (temp.next){
+            if (temp.next.value == val){
+                if (temp.next.next === null){
+                    temp.next = null;
+                    break;
+                }
+                temp.next = temp.next.next;
+            }
+            temp = temp.next;
+        }
+        return this;
+    }
+
+    this.prependVal = function (val,before){
+        var temp = this.head;
+        var node = new Node (val);
+        if (!temp){
+            this.head = node;
+            return this;
+        }
+        if (temp.value == before){
+            node.next = temp;
+            this.head = node;
+            return this;
+        }
+        while (temp.next){
+            if (temp.next.value == before){
+                node.next = temp.next;
+                temp.next = node;
+                return this;
+            }
+            temp = temp.next;
+        }
+        temp.next = node;
+        return this;
+    }
+
+    this.print = function (){
+        temp = this.head;
+        while(temp){
+            console.log(temp.value);
+            temp = temp.next;
+        }
+        return this;
+    }
 }
 
 
 var test=new SLL();
+test.addFront('b');
 test.addFront(0);
-test.addFront(6);
+test.addFront('a');
 test.addFront(4);
-test.addFront(2);
-console.log(test);
-console.log(test.max());
+test.prependVal('x','a');
+test.removeVal('b');
+test.print();

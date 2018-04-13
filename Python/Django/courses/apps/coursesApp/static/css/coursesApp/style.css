@@ -1,0 +1,10 @@
+.block{
+    display: block;
+    margin: 10px;
+}
+h2{
+    display: block;
+}
+body{
+    padding: 20px;
+}

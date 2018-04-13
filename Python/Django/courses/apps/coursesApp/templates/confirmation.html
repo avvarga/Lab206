@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/coursesApp/bootstrap.css' %}">
+    <title>Delete a course</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete the following course?</h3>
+    <table class="table">
+        <tr>
+            <td>Name:</td>
+            <td>{{ courses.name }}</td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>{{ courses.desc }}</td>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            <td><a href="/"><button class="btn" type="submit">No</button></a></td>
+            <td><a href="/courses/destroy/{{ courses.id }}"><button class="btn btn-danger" type="submit">Yes! I want to delete this</button></a></td>
+        </tr>
+    </table>
+</body>
+</html>

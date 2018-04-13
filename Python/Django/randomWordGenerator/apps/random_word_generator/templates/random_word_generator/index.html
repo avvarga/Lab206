@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/random_word_generator/style.css' %}">
+    <title>Random Word</title>
+</head>
+<body>
+    <h4>Random Word (attempt #{{ request.session.counter }})</h4>
+    <div id="word">
+        <h1>{{ request.session.word }}</h1>
+    </div>
+    <a href="/generate"><button>Generate</button></a>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ninjaGold/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ninjaGold/bootstrap.css' %}">
+    <title>Ninja Money</title>
+</head>
+<body>
+    <h3 id= "top">Your Gold:</h3>
+    <div id="score">
+        <p>{{ request.session.result }}</p>
+    </div>
+    <form action="/reset" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Reset">
+    </form>
+    <div id="wrapper">
+        <div class="option">
+            <h3>Farm:</h3>
+            <h5>(earns 10 - 20 gold)</h5>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm"/>
+                <input type="submit" value="Find Gold!"/>   
+            </form>
+        </div>
+        <div class="option">
+            <h3>Cave:</h3>
+            <h5>(earns 5 - 10 gold)</h5>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave"/>
+                <input type="submit" value="Find Gold!"/>   
+            </form>
+        </div>
+        <div class="option">
+            <h3>House:</h3>
+            <h5>(earns 2 - 5 gold)</h5>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house"/>
+                <input type="submit" value="Find Gold!"/>   
+            </form>
+        </div>
+        <div class="option">
+            <h3>Casino:</h3>
+            <h5>(earns/takes 0 - 50 gold)</h5>
+            <form action="/process_money" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casino"/>
+                <input type="submit" value="Find Gold!"/>   
+            </form>
+        </div>
+        <h4>Activities:</h4>
+        <footer>
+            <p>{% for logs in request.session.log %}
+                    <p class="{{ logs.color }}">{{logs.message}}</p>
+                {% endfor %}</p> 
+        </footer>
+    </div>
+</body>
+</html>
